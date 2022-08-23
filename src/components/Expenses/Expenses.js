@@ -1,4 +1,4 @@
-import './Expenses.css';
+import '../UI/Expenses.css';
 import ExpenseItem from './ExpenseItem';
 import Card from './Card';
 
