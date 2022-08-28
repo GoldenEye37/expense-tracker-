@@ -21,10 +21,13 @@ function Expenses(props) {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpenses.length===0 ? (
-        <p> No Expenses Found!</p>
-      ) : (
-        filteredExpenses.map((expense) => (
+
+      {/* this is approach uses a javascript concept where if
+          the first contion is true it returns the other expression 
+          after the && operator */}
+      {filteredExpenses.length===0 && <p> No Expenses Found!</p>} 
+        
+      {filteredExpenses.length > 0 && filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}
@@ -32,7 +35,8 @@ function Expenses(props) {
             date={expense.date}
           />
         ))
-      )}
+      }
+        
     </Card>
   );
 }
